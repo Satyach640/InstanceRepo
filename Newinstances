@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create EC2 instances
+Resources:
+  MyEC2Instance01:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0cd59ecaf368e5ccf # Use the appropriate AMI ID for your region and instance type
+      KeyName: ec2-login
+      SecurityGroupIds:
+        - sg-02048ad2029e630b1  # Use the appropriate security group ID
+      Tags:
+        - Key: myec2-01
+          Value: MyInstance1
+  MyEC2Instance2:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0cd59ecaf368e5ccf  # Use the appropriate AMI ID for your region and instance type
+      KeyName: ec2-login
+      SecurityGroupIds:
+        - sg-02048ad2029e630b1  # Use the appropriate security group ID
+      Tags:
+        - Key: myec2-02
+          Value: MyInstance2
